@@ -1,0 +1,95 @@
+﻿<Window x:Class="Satori.DeckBuilderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Deck Builder" Height="480" Width="640" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Currently Selected Deck:" Grid.Row="0" Grid.Column="0" Margin="5" Name="CurrentlySelectedDeckLabel"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Margin="5" Name="SelectedDeckTextBox" IsReadOnly="True" />
+        
+        <Grid Grid.Row="0" Grid.Column="2" Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".5*" />
+                <RowDefinition Height=".5*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Vertical" VerticalAlignment="Top">
+                <Button Content="Select Deck To Edit"  Name="SelectDeckButton" Margin="5" Click="SelectDeckButton_Click" />
+                <Button Content="Create New Deck" Margin="5"  Name="CreateNewDeckButton" Click="CreateNewDeckButton_Click" />
+                <Button Content="Delete Current Deck" Name="DeleteDeckButton" Margin="5" Click="DeleteDeckButton_Click" />
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical" VerticalAlignment="Center">
+                <Button Content="Add Card" Name="AddCardButton" Margin="5" Click="AddCardButton_Click"/>
+                <Button Content="Delete Selected Card" Name="DeleteCardButton" Margin="5" Click="DeleteCardButton_Click" />
+                <Button Content="Select Image" Name="SelectImageButton" Margin="5" Click="SelectImageButton_Click" />
+            </StackPanel>
+
+        </Grid>
+
+        <ListView Name="CardSelector" Grid.Row="1" Grid.Column="0" Margin="5" Grid.RowSpan="2" SelectionChanged="CardSelector_SelectionChanged" MaxWidth="{Binding ElementName=CurrentlySelectedDeckLabel, Path=ActualWidth}" >
+            <ListView.View>
+            <GridView>
+                <GridViewColumn DisplayMemberBinding="{Binding Path=FrontText}" >
+                        <GridViewColumnHeader Tag="Cards" Content="Cards" HorizontalAlignment="Left" />
+                </GridViewColumn>
+            </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Image Name="Image" Grid.Row="1" Grid.Column="1"  Margin="5" />
+
+        <Grid Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Content="Front Language:" Name="FrontLanguageLabel" Grid.Row="0" Grid.Column="0" Margin="5" HorizontalAlignment="Right" />
+            <ComboBox Name="FrontLanguageComboBox" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Style="{StaticResource ResourceKey=LanguageComboBoxStyle}" Margin="5" SelectionChanged="FrontLanguageComboBox_SelectionChanged" />
+            <Label Content="Back Language:" Grid.Row="1" Grid.Column="0" Name="BackLanguageLabel" Margin="5" HorizontalAlignment="Right" />
+            <ComboBox Name="BackLanguageComboBox" Style="{StaticResource ResourceKey=LanguageComboBoxStyle}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Margin="5" SelectionChanged="BackLanguageComboBox_SelectionChanged" />
+            <Button Name="AddNewLanguage" Grid.Row="0" Grid.Column="2" Content="Add New Language" Margin="5" Click="AddNewLanguage_Click" />
+            <Button Content="Remove Language" Grid.Row="1" Grid.Column="2" Name="RemoveLanguageButton" Margin="5" Click="DeleteLanguageButton_Click" />
+        </Grid>
+        
+        <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Content="Front Text:"  Name="FrontTextLabel" Margin="5"  />
+            <TextBox Grid.Row="0" Grid.Column="1" Name="FrontTextBox"  Margin="5" TextChanged="FrontTextBox_TextChanged" />
+            <Label Content="Back Text:" Grid.Row="1" Grid.Column="0" Name="BackTextLabel" Margin="5" />
+            <TextBox Name="BackTextBox" Grid.Row="1" Grid.Column="1" Margin="5" TextChanged="BackTextBox_TextChanged" />
+        </Grid>
+        
+
+        <Button Content="Cancel" Grid.Row="8" Grid.Column="0" Name="CancelButton" Margin="5" Click="CancelButton_Click" />
+        <Button Content="Save" Grid.Row="8" Grid.Column="1" Name="SaveButton" Margin="5" Click="SaveButton_Click" />
+        <Button Content="Done" Grid.Row="8" Grid.Column="2"  Name="DoneButton" Margin="5" Click="DoneButton_Click"/>
+
+    </Grid>
+</Window>

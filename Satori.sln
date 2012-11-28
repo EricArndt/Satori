@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Satori", "Satori\Satori.csproj", "{540F23B9-A814-4951-9E4F-36611C397672}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Satori.Model", "Satori.Model\Satori.Model.csproj", "{A58BCA98-701C-463C-B4A8-BCDA11701BE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Satori.Test", "Satori.Test\Satori.Test.csproj", "{C396EE9D-4A20-499C-997F-B2A35FD43A94}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{540F23B9-A814-4951-9E4F-36611C397672}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{540F23B9-A814-4951-9E4F-36611C397672}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{540F23B9-A814-4951-9E4F-36611C397672}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{540F23B9-A814-4951-9E4F-36611C397672}.Debug|x86.ActiveCfg = Debug|x86
+		{540F23B9-A814-4951-9E4F-36611C397672}.Debug|x86.Build.0 = Debug|x86
+		{540F23B9-A814-4951-9E4F-36611C397672}.Release|Any CPU.ActiveCfg = Release|x86
+		{540F23B9-A814-4951-9E4F-36611C397672}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{540F23B9-A814-4951-9E4F-36611C397672}.Release|Mixed Platforms.Build.0 = Release|x86
+		{540F23B9-A814-4951-9E4F-36611C397672}.Release|x86.ActiveCfg = Release|x86
+		{540F23B9-A814-4951-9E4F-36611C397672}.Release|x86.Build.0 = Release|x86
+		{A58BCA98-701C-463C-B4A8-BCDA11701BE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A58BCA98-701C-463C-B4A8-BCDA11701BE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A58BCA98-701C-463C-B4A8-BCDA11701BE9}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{A58BCA98-701C-463C-B4A8-BCDA11701BE9}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{A58BCA98-701C-463C-B4A8-BCDA11701BE9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A58BCA98-701C-463C-B4A8-BCDA11701BE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A58BCA98-701C-463C-B4A8-BCDA11701BE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A58BCA98-701C-463C-B4A8-BCDA11701BE9}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{A58BCA98-701C-463C-B4A8-BCDA11701BE9}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{A58BCA98-701C-463C-B4A8-BCDA11701BE9}.Release|x86.ActiveCfg = Release|Any CPU
+		{C396EE9D-4A20-499C-997F-B2A35FD43A94}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{C396EE9D-4A20-499C-997F-B2A35FD43A94}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{C396EE9D-4A20-499C-997F-B2A35FD43A94}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{C396EE9D-4A20-499C-997F-B2A35FD43A94}.Debug|x86.ActiveCfg = Debug|x86
+		{C396EE9D-4A20-499C-997F-B2A35FD43A94}.Debug|x86.Build.0 = Debug|x86
+		{C396EE9D-4A20-499C-997F-B2A35FD43A94}.Release|Any CPU.ActiveCfg = Release|x86
+		{C396EE9D-4A20-499C-997F-B2A35FD43A94}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{C396EE9D-4A20-499C-997F-B2A35FD43A94}.Release|Mixed Platforms.Build.0 = Release|x86
+		{C396EE9D-4A20-499C-997F-B2A35FD43A94}.Release|x86.ActiveCfg = Release|x86
+		{C396EE9D-4A20-499C-997F-B2A35FD43A94}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

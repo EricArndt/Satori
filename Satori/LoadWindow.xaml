@@ -1,0 +1,45 @@
+﻿<Window x:Class="Satori.LoadWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Load" Height="480" Width="640" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".5*" />
+            <ColumnDefinition Width=".5*" />
+        </Grid.ColumnDefinitions>
+        
+        <ListView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="5" Name="deckList">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListViewItem}">
+                    <EventSetter Event="MouseDoubleClick" Handler="deckList_MouseDoubleClick"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="150" DisplayMemberBinding="{Binding Path=Name}"  >
+                        <GridViewColumnHeader Tag="Name" Content="Deck Name" Click="SortDeckView_Click" />
+                    </GridViewColumn>
+                    <GridViewColumn Width="150" DisplayMemberBinding="{Binding Path=Created, StringFormat={}{0:M/d/yyyy h:mm tt}}">
+                        <GridViewColumnHeader Tag="Created" Content="Date Created" Click="SortDeckView_Click" />
+                    </GridViewColumn>
+                    <GridViewColumn Width="150" DisplayMemberBinding="{Binding Path=Modified, StringFormat={}{0:M/d/yyyy h:mm tt}}">
+                        <GridViewColumnHeader Tag="Modified" Content="Date Modified" Click="SortDeckView_Click" />
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" Margin="5" Grid.Column="0" Grid.Row="0">
+            <Label Content="Front Language:"/>
+            <ComboBox Style="{StaticResource ResourceKey=LanguageComboBoxStyle}" Grid.Column="0" Grid.Row="0" Name="FrontLanguageComboBox" Margin="0,0,5,0" SelectionChanged="LanguageComboBox_SelectionChanged" />    
+            <Label Content="Back Language:"/>
+            <ComboBox Style="{StaticResource ResourceKey=LanguageComboBoxStyle}" Grid.Column="0" Grid.Row="0" Name="BackLanguageComboBox" SelectionChanged="LanguageComboBox_SelectionChanged" /> 
+        </StackPanel>
+        <Button Grid.Column="0" Grid.Row="2" Margin="5" Name="Cancel" Content="Cancel" Click="Cancel_Click" />
+        <Button Grid.Column="1" Grid.Row="2" Margin="5" Name="Select" Content="Select" Click="Select_Click"/>
+    </Grid>
+</Window>
