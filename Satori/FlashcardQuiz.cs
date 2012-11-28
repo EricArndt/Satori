@@ -37,7 +37,7 @@ namespace Satori
 
         private void ShuffleDeck(List<Model.Card> list)
         {
-            Random rng = new Random();
+            var rng = new Random();
             int n = list.Count;
             while (n > 1)
             {
