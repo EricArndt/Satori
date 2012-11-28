@@ -25,11 +25,7 @@ namespace Satori
 
             foreach(var d in decks)
             {
-                var cards = Model.Card.SelectAllCardsByDeckID(d.DeckID);
-                foreach(var c in cards)
-                {
-                    Cards.Add(c);
-                }
+                Cards.AddRange(Model.Card.SelectAllCardsByDeckID(d.DeckID));
             }
 
             currentDeckIndex = 0;
@@ -56,12 +52,7 @@ namespace Satori
         private void CopyCardsToCurrentDeck()
         {
             CurrentDeck = new List<Model.Card>();
-
-            foreach (var c in Cards)
-            {
-                CurrentDeck.Add(c);
-            }
-
+            CurrentDeck.AddRange(Cards);
             ShuffleDeck(CurrentDeck);
         }
 
